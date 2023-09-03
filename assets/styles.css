@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  font-size: 0.8rem;
+  /* scroll özelliğini koruması ama ekranda görünmemesi için */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.fixed-header {
+  width: 100%;
+  background: #d8d0d0;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.table-element {
+  width: calc(80% / 18);
+  height: 2.5rem;
+  border-right: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.table-element > span {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.fixed-header > .table-element:first-child {
+  width: 20%;
+}
+.fixed-header > .table-element:last-child {
+  border-right: none;
+}
+.table-row-header {
+  width: 100%;
+  display: flex;
+  height: 1rem;
+  border-bottom: 1px solid black;
+}
+.table-row-header > .table-element {
+  height: auto;
+  display: flex;
+}
+.table-row-header > .table-element:first-child {
+  width: 20%;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+.table-element,
+.table-row-header {
+  box-sizing: border-box;
+}
+.table-row {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid black;
+  height: 2.5rem;
+}
+.table-row > .table-element {
+  height: auto;
+  display: flex;
+}
+.table-row > .table-element:first-child {
+  width: 20%;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+.table-row > .table.table-element:last-child {
+  border-right: none;
+}
+.selected {
+  background-color: yellow;
+}
+.mt-2 {
+  margin-top: 2.5rem;
+}
+.bucket-bottom-right {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 25%;
+  border: 1px solid black;
+  background: white;
+  padding: 0 0.5rem 0.8rem 0.5rem;
+}
+.border-right-none {
+  border-right: unset;
+}
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+.bucket-item-detail {
+  border-bottom: 1px solid black;
+  padding: 0.3rem 0.5rem;
+  width: 100%;
+}
+.bucket-item-detail > span {
+  font-weight: bold;
+  margin-left: 0.3rem;
+}
+.bucket-item-price {
+  padding-top: 0.5rem;
+}
+.bucket-item-price > span {
+  font-weight: bold;
+  margin-left: 0.1rem;
+}
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-top: 4px solid #d8d0d0;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
